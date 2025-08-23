@@ -1,7 +1,7 @@
 # Hackwave-webApp
 A production-minded, hackathon-ready system that refines raw product requirements using collaborating AI agents.
 
-Key Features
+-Key Features
 
 Role-based agents: Collector, Critic, Feasibility, Security, Mediator, and Visualizer.
 
@@ -13,9 +13,9 @@ Auto-visualization: Generates flowcharts/sequence diagrams from the final spec.
 
 API + UI: FastAPI backend with REST/WebSocket; Next.js frontend for live debates.
 
-Optional integrations: Pull user stories from Trello (lightweight) or Jira (enterprise).
+-Optional integrations: Pull user stories from Trello (lightweight) or Jira (enterprise).
 
-Agents (Default Roles)
+-Agents (Default Roles)
 
 Collector: Normalizes input into a structured spec template.
 
