@@ -95,7 +95,7 @@ const Pricing = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Simple,{' '}
-            <span className="gradient-text">transparent pricing</span>
+            <span className="text-gray-900">transparent pricing</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Choose the plan that fits your needs. All plans include our core features 
@@ -329,7 +329,7 @@ const Pricing = () => {
         </div>
 
         {/* Enterprise CTA */}
-        <div className="bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl p-8 lg:p-12 text-center text-white">
+        <div className="bg-[#7B4B2E]/70 rounded-2xl p-8 lg:p-12 text-center text-white">
           <h3 className="text-2xl lg:text-3xl font-bold mb-4">
             Need a custom solution?
           </h3>

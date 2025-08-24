@@ -27,7 +27,7 @@ const Navigation = () => {
   const navItems = [
     { name: 'Features', href: '#features', hasDropdown: false },
     { name: 'Pricing', href: '#pricing', hasDropdown: false },
-    { name: 'Guides', href: '#guides', hasDropdown: false },
+    { name: 'Guides', href: '#how-it-works', hasDropdown: false },
   ]
 
   return (

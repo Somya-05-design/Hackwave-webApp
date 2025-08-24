@@ -4,7 +4,7 @@ import { ArrowRight, Zap, Users, Shield } from 'lucide-react'
 
 const CTA = () => {
   return (
-    <section className="section-padding bg-gradient-to-br from-primary-600 via-primary-700 to-accent-600 relative overflow-hidden">
+    <section className="section-padding bg-[#7B4B2E]/70 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>

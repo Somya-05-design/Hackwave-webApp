@@ -28,10 +28,10 @@ const HowItWorks = () => {
   const steps: Step[] = [
     {
       icon: Code,
-      title: 'Write Code',
-      description: 'Start building with AI-powered code suggestions and intelligent autocomplete.',
+      title: 'Write Query',
+      description: 'Start building with AI-powered Query suggestions and intelligent autocomplete.',
       details: [
-        'AI code generation',
+        'AI Query generation',
         'Smart autocomplete',
         'Real-time suggestions',
         'Error detection'
@@ -94,65 +94,14 @@ const HowItWorks = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Get from idea to production in{' '}
-            <span className="gradient-text">minutes, not days</span>
+            <span className="text-gray-900">minutes, not days</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Our streamlined workflow makes it incredibly simple to build, deploy, and scale your applications.
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-16">
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className={`relative cursor-pointer transition-all duration-300 ${
-                activeStep === index ? 'scale-105' : 'hover:scale-105'
-              }`}
-              onClick={() => setActiveStep(index)}
-            >
-              {/* Step Number */}
-              <div className={`absolute -top-4 -left-4 w-8 h-8 ${getColorClasses(step.color, 'bg')} rounded-full flex items-center justify-center text-sm font-bold ${getColorClasses(step.color, 'text')}`}>
-                {index + 1}
-              </div>
-
-              {/* Step Card */}
-              <div className={`card p-6 h-full ${
-                activeStep === index ? 'ring-2 ring-primary-500 shadow-lg' : ''
-              }`}>
-                <div className={`w-16 h-16 ${getColorClasses(step.color, 'bg')} rounded-2xl flex items-center justify-center mb-4`}>
-                  <step.icon className={`w-8 h-8 ${getColorClasses(step.color, 'text')}`} />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  {step.description}
-                </p>
-                <div className="text-sm font-medium text-primary-600 mb-4">
-                  ⚡ {step.duration}
-                </div>
-                <div className="space-y-2">
-                  {step.details.map((detail, detailIndex) => (
-                    <div key={detailIndex} className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                      <span className="text-sm text-gray-600">{detail}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Arrow between steps */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                  <div className={`w-8 h-8 ${getColorClasses(step.color, 'bg')} rounded-full flex items-center justify-center`}>
-                    <ArrowRight className={`w-4 h-4 ${getColorClasses(step.color, 'text')}`} />
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+        {/* Steps grid removed per request */}
 
         {/* Step Details */}
         <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm">

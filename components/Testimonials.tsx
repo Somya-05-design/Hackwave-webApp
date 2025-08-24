@@ -87,7 +87,7 @@ const Testimonials = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Loved by{' '}
-            <span className="gradient-text">thousands of developers</span>
+            <span className="text-gray-900">thousands of developers</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             See what our customers have to say about their experience with Zeda.

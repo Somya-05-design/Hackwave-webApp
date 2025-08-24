@@ -26,7 +26,11 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-neutral-800 to-accent-500 bg-clip-text text-transparent;
+    /* Render as a solid #e552cd via a same-color gradient */
+    background-image: linear-gradient(to right, #e552cd, #e552cd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   
   .gradient-bg {

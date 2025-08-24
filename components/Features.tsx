@@ -1,246 +1,74 @@
 'use client'
 
-import { useState } from 'react'
 import { 
-  Code, 
-  Zap, 
-  Shield, 
-  Users, 
-  BarChart3, 
-  GitBranch, 
-  Cloud, 
-  Lock,
-  ArrowRight,
-  CheckCircle,
-  LucideIcon
+  Code,
+  Shield,
+  Users,
+  GitBranch
 } from 'lucide-react'
 
-interface Feature {
+interface FeatureItem {
   title: string;
   description: string;
-  icon: LucideIcon;
-  color: string;
-  details: {
-    title: string;
-    items: string[];
-  };
+  icon: React.ElementType;
 }
 
 const Features = () => {
-  const [activeFeature, setActiveFeature] = useState(0)
-
-  const features: Feature[] = [
+  const features: FeatureItem[] = [
     {
       icon: Code,
-      title: 'AI-Powered Code Generation',
-      color: 'blue',
-      description: 'Generate production-ready code with intelligent suggestions and auto-completion powered by advanced AI models.',
-      details: {
-        title: 'Smart Development Tools',
-        items: [
-          'Smart code suggestions',
-          'Auto-completion',
-          'Bug detection',
-          'Performance optimization'
-        ]
-      }
-    },
-    {
-      icon: Zap,
-      title: 'Lightning Fast Deployment',
-      color: 'green',
-      description: 'Deploy your applications in seconds with our optimized infrastructure and intelligent scaling.',
-      details: {
-        title: 'Deployment Features',
-        items: [
-          'Instant deployment',
-          'Auto-scaling',
-          'Global CDN',
-          'Zero downtime'
-        ]
-      }
-    },
-    {
-      icon: Shield,
-      title: 'Enterprise Security',
-      color: 'red',
-      description: 'Bank-level security with SOC 2 compliance, encryption at rest, and advanced threat protection.',
-      details: {
-        title: 'Security Features',
-        items: [
-          'SOC 2 Type II',
-          'End-to-end encryption',
-          'Advanced threat protection',
-          'Compliance ready'
-        ]
-      }
-    },
-    {
-      icon: Users,
-      title: 'Team Collaboration',
-      color: 'purple',
-      description: 'Real-time collaboration tools that keep your team in sync across all devices and time zones.',
-      details: {
-        title: 'Collaboration Features',
-        items: [
-          'Real-time editing',
-          'Team workspaces',
-          'Version control',
-          'Code reviews'
-        ]
-      }
-    },
-    {
-      icon: BarChart3,
-      title: 'Advanced Analytics',
-      color: 'yellow',
-      description: 'Comprehensive insights into your development process with detailed metrics and performance tracking.',
-      details: {
-        title: 'Analytics Features',
-        items: [
-          'Performance metrics',
-          'Usage analytics',
-          'Cost optimization',
-          'Custom dashboards'
-        ]
-      }
+      title: 'AI Requirement Analysis',
+      description:
+        'Refine features with AI-driven goals, dependencies, constraints, and edge cases.'
     },
     {
       icon: GitBranch,
-      title: 'Git Integration',
-      color: 'indigo',
-      description: 'Seamless integration with Git workflows, branching strategies, and automated deployment pipelines.',
-      details: {
-        title: 'Git Features',
-        items: [
-          'Git workflow automation',
-          'Branch protection',
-          'Auto-deployment',
-          'Conflict resolution'
-        ]
-      }
+      title: 'Real-time GitHub Sync',
+      description:
+        'Track commits, PRs, bugs, and deployments without leaving the platform.'
+    },
+    {
+      icon: Shield,
+      title: 'PRD & Gherkin Generator',
+      description:
+        'Automatically generate detailed product documents and test scenarios.'
+    },
+    {
+      icon: Users,
+      title: 'Team Productivity Suite',
+      description:
+        'Manage projects, track issues, and collaborate with a Notion-style interface.'
     }
   ]
 
-  const getColorClasses = (color: string, type: 'bg' | 'text' | 'border' = 'bg') => {
-    const colors: Record<string, Record<string, string>> = {
-      blue: {
-        bg: 'bg-neutral-100',
-        text: 'text-neutral-800',
-        border: 'border-neutral-200'
-      },
-      green: {
-        bg: 'bg-neutral-100',
-        text: 'text-neutral-800',
-        border: 'border-neutral-200'
-      },
-      red: {
-        bg: 'bg-accent-100',
-        text: 'text-accent-500',
-        border: 'border-accent-200'
-      },
-      purple: {
-        bg: 'bg-neutral-50',
-        text: 'text-neutral-800',
-        border: 'border-neutral-100'
-      },
-      yellow: {
-        bg: 'bg-accent-50',
-        text: 'text-accent-600',
-        border: 'border-accent-100'
-      },
-      indigo: {
-        bg: 'bg-neutral-50',
-        text: 'text-neutral-800',
-        border: 'border-neutral-100'
-      },
-      primary: {
-        bg: 'bg-neutral-100',
-        text: 'text-neutral-800',
-        border: 'border-neutral-200'
-      },
-      accent: {
-        bg: 'bg-accent-100',
-        text: 'text-accent-500',
-        border: 'border-accent-200'
-      }
-    };
-
-    return colors[color]?.[type] || colors.blue[type];
-  }
+  const CardIcon = ({ Icon }: { Icon: React.ElementType }) => (
+    <div className="w-7 h-7 rounded-md bg-blue-100 text-blue-600 flex items-center justify-center">
+      <Icon className="w-3 h-3" />
+    </div>
+  )
 
   return (
-    <section className="py-20 bg-neutral-50">
+    <section id="features" className="py-16 bg-neutral-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
-            Everything you need to{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 to-accent-500">
-              build amazing apps
-            </span>
-          </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-            Powerful features designed to accelerate your development workflow and 
-            help you ship better software faster.
-          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-3">Everything you need, supercharged by AI</h2>
+          <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto">A unified platform to manage the entire product lifecycle.</p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl p-8 relative z-10">
-            <div className={`inline-flex items-center space-x-2 ${getColorClasses(features[activeFeature].color, 'bg')} rounded-full px-4 py-2 mb-6`}>
-              {(() => {
-                const IconComponent = features[activeFeature].icon;
-                return <IconComponent className={`w-5 h-5 ${getColorClasses(features[activeFeature].color, 'text')}`} />;
-              })()}
-              <span className={`text-sm font-medium ${getColorClasses(features[activeFeature].color, 'text')}`}>
-                {features[activeFeature].title}
-              </span>
-            </div>
-            <h3 className="text-3xl font-bold text-neutral-900 mb-4">
-              {features[activeFeature].details.title}
-            </h3>
-            <p className="text-lg text-neutral-600 mb-8">
-              {features[activeFeature].description}
-            </p>
-            <ul className="space-y-3 mb-8">
-              {features[activeFeature].details.items.map((item, index) => (
-                <li key={index} className="flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-secondary-300" />
-                  <span className="text-neutral-700">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <button className="inline-flex items-center text-accent-500 font-medium hover:text-accent-800 transition-colors">
-              Learn more <ArrowRight className="w-4 h-4 ml-2" />
-            </button>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {features.map(({ title, description, icon: Icon }) => (
+              <div key={title} className="group rounded-xl border border-neutral-200 overflow-hidden">
+                <div className="bg-white p-4 transition-transform duration-300 ease-out group-hover:scale-[1.03] will-change-transform">
+                  <CardIcon Icon={Icon} />
+                  <h3 className="mt-3 text-sm sm:text-base font-semibold text-neutral-900">{title}</h3>
+                  <p className="mt-2 text-xs sm:text-sm text-neutral-600 leading-6">{description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-12">
-                  {features.map((feature, index) => {
-                    const IconComponent = feature.icon;
-                    return (
-                      <button
-                        key={index}
-                        onClick={() => setActiveFeature(index)}
-                        className={`p-4 rounded-xl transition-all ${
-                          activeFeature === index
-                            ? `${getColorClasses(feature.color, 'bg')} shadow-lg transform -translate-y-1`
-                            : 'bg-white hover:bg-neutral-50'
-                        }`}
-                      >
-                        <div className="flex flex-col items-center text-center">
-                          <div className={`p-3 rounded-full ${getColorClasses(feature.color, 'bg')} mb-3`}>
-                            <IconComponent className={`w-5 h-5 ${getColorClasses(feature.color, 'text')}`} />
-                          </div>
-                          <h4 className="text-sm font-medium text-neutral-900">
-                            {feature.title}
-                          </h4>
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
+        
       </div>
     </section>
   )
